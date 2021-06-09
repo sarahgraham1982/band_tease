@@ -36,7 +36,7 @@ def show_band(id):
     band = band_repository.select(id)
     return render_template('bands/show.html', band = band)
 
-@bands_blueprint.route("/bands/<id>/edit", methods=['GET"])
+@bands_blueprint.route("/bands/<id>/edit", methods=['GET'])
 def edit_band(id):
     band = band_repository.select(id)
     users = user_repository.select_all()
