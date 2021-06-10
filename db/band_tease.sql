@@ -13,3 +13,10 @@ CREATE TABLE bands (
     favourite_album VARCHAR(255),
     fun_fact VARCHAR(255)
 );
+
+CREATE TABLE users_bands (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    band_id INT REFERENCES bands(id) ON DELETE CASCADE
+
+);

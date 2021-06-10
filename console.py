@@ -20,4 +20,7 @@ band_repository.save(band1)
 band2 = Band("Nirvana", "Grunge", "Serve the Servants", "In Utero", "Lead singer died from a gunshot in 1994.")
 band_repository.save(band2)
 
+# user_band1 = UsersBands(user1, band1)
+# user_band1.save
+
 pdb.set_trace()
