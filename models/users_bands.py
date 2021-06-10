@@ -1,4 +1,4 @@
-class UsersBands:
+class UserBand:
     def __init__(self, user, band, id):
         self.user = user
         self. band = band

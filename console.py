@@ -7,6 +7,7 @@ import repositories.user_repository as user_repository
 
 band_repository.delete_all()
 user_repository.delete_all()
+user_band_repository.delete_all()
 
 user1 = User("Kendall")
 user_repository.save(user1)
@@ -20,7 +21,9 @@ band_repository.save(band1)
 band2 = Band("Nirvana", "Grunge", "Serve the Servants", "In Utero", "Lead singer died from a gunshot in 1994.")
 band_repository.save(band2)
 
-# user_band1 = UsersBands(user1, band1)
-# user_band1.save
+user_band1 = UserBand(user1, band1)
+user_band_repository.save(user_band1)
+user_band2 =UserBand(user2, band2)
+user_band_repository.save(user_band2)
 
 pdb.set_trace()
