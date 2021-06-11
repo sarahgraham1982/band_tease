@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h2>ALL BANDS</h2>
+    <ul>
+        {% for band in bands %}
+             
+                <h3><u><i>{{band.band_name}}</i></u></h3> 
+                <p><h4>{{band.genre}}</h4></p>
+                <p>{{band.favourite_song}}</p>
+                <p>{{band.favourite_album}}</p>
+                <p>{{band.fun_fact}}</p>
+                <br></br>
+
+             
+                
+        {% endfor %}
+
+    </ul>       
+
+
+
+
+
+{% endblock %}  
