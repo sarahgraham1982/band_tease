@@ -1,6 +1,6 @@
-from db.run_sql import run.sql
+from db.run_sql import run_sql
 
-from models.user_ands import UserBand
+from models.user_band import UserBand
 from models.band import Band
 from models.user import User
 
@@ -39,7 +39,7 @@ def user(user_band):
     values = [user_band.user.id]
     results - run_sql(sql, values)[0]
     user = User(results['name'], results['id'])
-return user
+    return user
 
 def delete_all():
     sql = "DELETE FROM users_bands"

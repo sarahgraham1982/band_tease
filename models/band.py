@@ -7,3 +7,4 @@ class Band:
         self.favourite_album = favourite_album
         self.fun_fact = fun_fact
         self.id = id
+       

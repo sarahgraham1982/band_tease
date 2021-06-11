@@ -7,7 +7,7 @@ import repositories.user_repository as user_repository
 
 def save(band):
     sql = "INSERT INTO bands(band_name, genre, favourite_song, favourite_album, fun_fact, user_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
-    values = [band.band_name, band.genre, band.favourite_song, band.favourite_album, band.fun_fact, band.user_id]
+    values = [band.band_name, band.genre, band.favourite_song, band.favourite_album, band.fun_fact]
     results = run_sql(sql, values)
     id = results[0]['id']
     band.id = id
@@ -39,13 +39,13 @@ def select(id):
 
 
 def delete(id):
-    sql = "DELETE FROM tasks WHERE id = %s"
+    sql = "DELETE FROM bands WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
 
 def delete_all():
-    sql = "DELETE FROM tasks"
+    sql = "DELETE FROM bands"
     run_sql(sql)
 
 def update(band):

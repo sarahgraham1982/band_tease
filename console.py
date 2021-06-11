@@ -4,6 +4,7 @@ from models.user import User
 
 import repositories.band_repository as band_repository
 import repositories.user_repository as user_repository
+import repositories.user_band_repository as user_band_repository
 
 band_repository.delete_all()
 user_repository.delete_all()
