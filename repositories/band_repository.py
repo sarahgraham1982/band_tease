@@ -1,3 +1,4 @@
+
 from db.run_sql import run_sql
 
 from models.band import Band
@@ -20,7 +21,9 @@ def select_all ():
     results = run_sql(sql)
 
     for row in results:
+        
         user = user_repository.select(row['user_id'])
+        
         band = Band(row['band_name'], row['genre'], row['favourite_song'], row['favourite_album'], row['fun_fact'], user, row['id'])
         bands.append(band)
     return bands

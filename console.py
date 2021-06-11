@@ -1,6 +1,7 @@
 import pdb
 from models.band import Band
 from models.user import User
+from models.user_band import UserBand
 
 import repositories.band_repository as band_repository
 import repositories.user_repository as user_repository

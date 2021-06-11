@@ -23,7 +23,7 @@ def select_all():
     return users
 
 def select(id):
-    user - None
+    user = None
     sql = "SELECT * FROM users WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
