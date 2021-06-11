@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 
-from controllers.bands_controller import bands_blueprint
+from controllers.controller import bands_blueprint
 
 app = Flask(__name__)
 
