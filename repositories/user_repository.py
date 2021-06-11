@@ -43,7 +43,7 @@ def delete(id):
 
 def update(user):
     sql = "UPDATE users SET (user_name) = (%s) WHERE id = %s"
-    values = [user.use_name, user.id]
+    values = [user.user_name, user.id]
     run_sql(sql, values)
 
 def bands(user):

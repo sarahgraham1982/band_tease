@@ -7,7 +7,7 @@ import repositories.user_repository as user_repository
 
 def save(band):
     sql = "INSERT INTO bands(band_name, genre, favourite_song, favourite_album, fun_fact, user_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
-    values = [band.band_name, band.genre, band.favourite_song, band.favourite_album, band.fun_fact]
+    values = [band.band_name, band.genre, band.favourite_song, band.favourite_album, band.fun_fact, band.user.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     band.id = id
