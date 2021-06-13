@@ -1,53 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for band in all_bands %}
-        <div class="band">
-          <div class="content">
-            {{band.user.first_name}}
-            <div class="band_name">
-              <a href="/bands/{{band.id}}">{{band.band_name}}</a>
-              <span class="favourite_song">{{band.favourite_song}}</span>
-            </div>
-            <div class="buttons">
+{% for band in bands %}
+  <div class="band">
+    <div class="content">
+      {{band.user.first_name}}
+      <div class="band_name">
+        <a href="/band/{{band.id}}">{{band.band_name}}</a>
+      </div>
       
-              <form class="delete-form" action="/bands/{{band.id}}/delete" method="POST">
-                <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
-              </form>
-      
-              <!-- {% if task.completed == True %}
-                <i class="fa fa-check fa-2x" style="color:green" aria-hidden="true"></i>
-              {% else %}
-                <i class="fa fa-times fa-2x" aria-hidden="true"></i>
-              {% endif %} -->
-            </div>
-          </div>
-        </div>
-      {% endfor %}
 
-<!-- <div class="row">
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-  </div> -->
+      <div class="buttons">
+
+        <form class="delete-form" action="/bands/{{band.id}}/delete" method="POST">
+          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+        </form>
+
+        
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+      
+
+
   
 
     
-    <!-- {% for band in bands %}
-            
-        <h3><u><i>{{band.band_name}}</i></u></h3> 
-        <p><h4>{{band.genre}}</h4></p>
-        <p>{{band.favourite_song}}</p>
-        <p>{{band.favourite_album}}</p>
-        <p>{{band.fun_fact}}</p>
-        <br></br> -->
-
-
-
-
-            
-            
-    <!-- {% endfor %} -->
+    
 
           
 
