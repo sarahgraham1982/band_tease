@@ -1,7 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
 
+<form action="/bands" method="post">
+    <div>
+      <label for="band_name">Band Name:</label>
+      <input type="text" id="band_name" name="band_name" placeholder="Band Name" required autofocus>
+    </div>
+  
+    <div>
+      <label for="genre">Genre:</label>
+      <input type="text" id="genre" name="genre" placeholder="Genre" required>
+    </div>
+  
+    <div>
+        <label for="favourite_song">Favourite Song:</label>
+        <input type="text" id="favourite_song" name="favourite_song" placeholder="Favourite Song" required>
+      </div>
 
+      <div>
+        <label for="favourite_album">Favourite Album:</label>
+        <input type="text" id="favourite_album" name="favourite_album" placeholder="Favourite Album" required>
+      </div>
+
+      <div>
+        <label for="fun_fact">Fun Fact:</label>
+        <input type="text" id="fun_fact" name="fun_fact" placeholder="Fun Fact" required>
+      </div>
+  
+    <div>
+      <label for="user">User:</label>
+      <select id="user" name="user_id">
+        {% for user in all_users %}
+          <option value="{{ user.id }}">{{ user.first_name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  
+    <button type="submit">Add Band</button>
+  
+  </form>
       
 
 

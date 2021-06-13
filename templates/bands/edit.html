@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/bands/{{band.id}}" method="post">
+  <div>
+    <label for="band_name">Band Name:</label>
+    <input type="text" id="band_name" name="band_name" value="{{band.band_name}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="genre">Genre:</label>
+    <input type="text" id="genre" name="genre" value="{{band.genre}}" required>
+  </div>
+
+  <!-- <div>
+    <label for="completed">Completed:</label>
+    <select id="completed" name="completed">
+
+      <option value="true"
+        {% if task.completed == True %} selected="selected" {% endif %}>
+        True
+      </option> -->
+
+      <!-- <option value="false"
+        {% if task.completed == False %} selected="selected" {% endif %}>
+        False
+      </option>
+
+    </select>
+  </div> -->
+
+  <div>
+    <label for="user">User:</label>
+    <select id="user" name="user_id">
+      {% for user in all_users %}
+        <option value="{{ user.id }}"
+          {% if band.user.id== user.id %} selected="selected"{% endif %}>
+          {{ user.first_name }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <button type="submit">Update Band</button>
+
+</form>
+
+{% endblock %}

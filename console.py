@@ -1,19 +1,19 @@
 import pdb
 from models.band import Band
 from models.user import User
-from models.user_band import UserBand
+
 
 import repositories.band_repository as band_repository
 import repositories.user_repository as user_repository
-import repositories.user_band_repository as user_band_repository
+
 
 band_repository.delete_all()
 user_repository.delete_all()
-user_band_repository.delete_all()
 
-user1 = User("Kendall")
+
+user1 = User("Kendall", "Jenner")
 user_repository.save(user1)
-user2 = User("Justin")
+user2 = User("Justin", "Bieber")
 user_repository.save(user2)
 
 user_repository.select_all()
@@ -25,9 +25,5 @@ band_repository.save(band2)
 
 band_repository.select_all()
 
-user_band1 = UserBand(user1, band1)
-user_band_repository.save(user_band1)
-user_band2 =UserBand(user2, band2)
-user_band_repository.save(user_band2)
 
 pdb.set_trace()

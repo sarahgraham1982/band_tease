@@ -5,8 +5,8 @@ from models.band import Band
 
 
 def save(user):
-    sql = "INSERT INTO users (user_name) VALUES (%s) RETURNING *"
-    values = [user.user_name]
+    sql = "INSERT INTO users (first_name, last_name) VALUES (%s, %s) RETURNING *"
+    values = [user.first_name, user.last_name]
     results = run_sql(sql, values)
     id = results[0]['id']
     user.id = id
@@ -19,7 +19,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        user = User(row['user_name'], row['id'])
+        user = User(row['first_name'], row['last_name'], row['id'])
         users.append(user)
     return users
 
@@ -30,7 +30,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        user = User(result['user_name'], result['id'])
+        user = User(result['first_name'], result['last_name'], result['id'])
     return user
 
 def delete_all():
@@ -43,8 +43,8 @@ def delete(id):
     run_sql(sql, values)
 
 def update(user):
-    sql = "UPDATE users SET (user_name) = (%s) WHERE id = %s"
-    values = [user.user_name, user.id]
+    sql = "UPDATE users SET (first_name, last_name) = (%s, %s) WHERE id = %s"
+    values = [user.first_name, user.last_name, user.id]
     run_sql(sql, values)
 
 def bands(user):
@@ -55,6 +55,7 @@ def bands(user):
     results = run.sql, (sql, values)
 
     for row in results:
-        band = Band(row['band_name'], row['genre'], row['favourite_song'], row['favourite_album'], row['fun_fact'], row['id'])
+        band = Band(row['band_name'], row['genre'], row['favourite_song'], row['favourite_album'], row['fun_fact'], row['user_id'], row['id'])
         bands.append(band)
     return bands
+

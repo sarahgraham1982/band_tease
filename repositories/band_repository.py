@@ -8,11 +8,13 @@ import repositories.user_repository as user_repository
 
 def save(band):
     sql = "INSERT INTO bands(band_name, genre, favourite_song, favourite_album, fun_fact, user_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
-    values = [band.band_name, band.genre, band.favourite_song, band.favourite_album, band.fun_fact, band.user.id]
+    values = [band.band_name, band.genre, band.favourite_song, band.favourite_album, band.fun_fact]
     results = run_sql(sql, values)
     id = results[0]['id']
     band.id = id
     return band
+
+    # CHANGED band.user.id in brackets to user
 
 def select_all ():
     bands = []
@@ -21,12 +23,12 @@ def select_all ():
     results = run_sql(sql)
 
     for row in results:
-        
         user = user_repository.select(row['user_id'])
-        
-        band = Band(row['band_name'], row['genre'], row['favourite_song'], row['favourite_album'], row['fun_fact'], user, row['id'])
+        band = Band(row['band_name'], row['genre'], row['favourite_song'], row['favourite_album'], row['fun_fact'], row['id'])
         bands.append(band)
     return bands
+
+    # deleted user before row['id]
 
 
 def select(id):
@@ -40,6 +42,10 @@ def select(id):
         band = Band(result['band_name'], result['genre'], result['favourite_song'], result['favourite_album'], result['fun_fact'], user, result['id'])
     return band
 
+def delete_all():
+    sql = "DELETE FROM bands"
+    run_sql(sql)
+
 
 def delete(id):
     sql = "DELETE FROM bands WHERE id = %s"
@@ -47,11 +53,9 @@ def delete(id):
     run_sql(sql, values)
 
 
-def delete_all():
-    sql = "DELETE FROM bands"
-    run_sql(sql)
+
 
 def update(band):
     sql = "UPDATE bands SET (band_name, genre, favourite_song, favourite_album, fun_fact, user_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [band.band_name, band.genre, band.favourite_song, band.favourite_album, band.fun_fact, band.user_id]
+    values = [band.band_name, band.genre, band.favourite_song, band.favourite_album, band.fun_fact, band.user_id, band.id]
     run_sql(sql, values)
