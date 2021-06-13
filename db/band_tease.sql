@@ -1,4 +1,3 @@
--- DROP TABLE IF EXISTS users_bands;
 DROP TABLE IF EXISTS bands;
 DROP TABLE IF EXISTS users;
 
@@ -15,5 +14,6 @@ CREATE TABLE bands (
     genre VARCHAR(255),
     favourite_song VARCHAR(255),
     favourite_album VARCHAR(255),
-    fun_fact VARCHAR(255)
+    fun_fact VARCHAR(255),
+    user_id INT REFERENCES users(id)
 );

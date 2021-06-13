@@ -1,20 +1,17 @@
-
 from db.run_sql import run_sql
 
 from models.band import Band
 from models.user import User
 import repositories.user_repository as user_repository
 
-
 def save(band):
     sql = "INSERT INTO bands(band_name, genre, favourite_song, favourite_album, fun_fact, user_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
-    values = [band.band_name, band.genre, band.favourite_song, band.favourite_album, band.fun_fact]
+    values = [band.band_name, band.genre, band.favourite_song, band.favourite_album, band.fun_fact, band.user.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     band.id = id
     return band
 
-    # CHANGED band.user.id in brackets to user
 
 def select_all ():
     bands = []
@@ -28,7 +25,7 @@ def select_all ():
         bands.append(band)
     return bands
 
-    # deleted user before row['id]
+   
 
 
 def select(id):
