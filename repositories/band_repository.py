@@ -53,6 +53,6 @@ def delete(id):
 
 
 def update(band):
-    sql = "UPDATE bands SET (band_name, genre, favourite_song, favourite_album, fun_fact) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE bands SET (band_name, genre, favourite_song, favourite_album, fun_fact) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [band.band_name, band.genre, band.favourite_song, band.favourite_album, band.fun_fact, band.id]
     run_sql(sql, values)
