@@ -1,3 +1,5 @@
+
+
 from flask import Flask, render_template, redirect, request
 from flask import Blueprint
 from models.band import Band
@@ -20,7 +22,7 @@ def bands():
 # GET '/bands/new'
 @bands_blueprint.route("/bands/new", methods=['GET'])
 def new_band():
-    users = user_depository.select_all()
+    users = user_repository.select_all()
     return render_template("bands/new.html", all_users = users)
     # changed users to all_users
 
@@ -32,10 +34,10 @@ def create_band():
     user_id             = request.form['user_id']
     genre               = request.form['genre']
     favourite_song      = request.form['favourite_song']
-    favourite_album     = request.form['favourtie_album']
+    favourite_album     = request.form['favourite_album']
     fun_fact            = request.form['fun_fact']
     user                = user_repository.select(user_id)
-    band                = Band(band_name, genre, favourite_song, favourite_album, fun_fact)
+    band                = Band(band_name, genre, favourite_song, favourite_album, fun_fact, user)
     band_repository.save(band)
     return redirect('/bands') 
 
@@ -62,7 +64,7 @@ def update_band(id):
     user_id             = request.form['user_id']
     genre               = request.form['genre']
     favourite_song      = request.form['favourite_song']
-    favourite_album     = request.form['favourtie_album']
+    favourite_album     = request.form['favourite_album']
     fun_fact            = request.form['fun_fact']
     user                = user_repository.select(user_id)
     band                = Band(band_name, user, genre, favourite_song, favourite_album, fun_fact, id)
