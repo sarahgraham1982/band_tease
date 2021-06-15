@@ -21,7 +21,7 @@ def select_all ():
 
     for row in results:
         user = user_repository.select(row['user_id'])
-        band = Band(row['band_name'], row['genre'], row['favourite_song'], row['favourite_album'], row['fun_fact'], row['tee_image'], user, ['id'])
+        band = Band(row['band_name'], row['genre'], row['favourite_song'], row['favourite_album'], row['fun_fact'], row['tee_image'], user, row['id'])
         bands.append(band)
     return bands
 

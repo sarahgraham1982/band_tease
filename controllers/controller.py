@@ -16,6 +16,7 @@ bands_blueprint = Blueprint("bands", __name__)
 @bands_blueprint.route("/bands")
 def bands():
     bands = band_repository.select_all()
+    print([vars(item) for item in bands])
     return render_template("bands/index.html", bands = bands)
 
 # NEW
@@ -36,7 +37,7 @@ def create_band():
     favourite_song      = request.form['favourite_song']
     favourite_album     = request.form['favourite_album']
     fun_fact            = request.form['fun_fact']
-    tee_image           = request.form['tee_image']
+    tee_image           = "default.jpeg"
     user                = user_repository.select(user_id)
     band                = Band(band_name, genre, favourite_song, favourite_album, fun_fact, tee_image, user)
     band_repository.save(band)
@@ -67,8 +68,9 @@ def update_band(id):
     favourite_song      = request.form['favourite_song']
     favourite_album     = request.form['favourite_album']
     fun_fact            = request.form['fun_fact']
+    tee_image           = "default.jpeg"
     user                = user_repository.select(user_id)
-    band                = Band(band_name, genre, favourite_song, favourite_album, fun_fact, user, id)
+    band                = Band(band_name, genre, favourite_song, favourite_album, fun_fact, tee_image, user, id)
     band_repository.update(band)
     return redirect('/bands') 
 
