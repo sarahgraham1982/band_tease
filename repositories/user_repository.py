@@ -55,7 +55,7 @@ def bands(user):
     results = run.sql, (sql, values)
 
     for row in results:
-        band = Band(row['band_name'], row['genre'], row['favourite_song'], row['favourite_album'], row['fun_fact'], row['user_id'], row['id'])
+        band = Band(row['band_name'], row['genre'], row['favourite_song'], row['favourite_album'], row['fun_fact'], row['tee_image'], row['user_id'], row['id'])
         bands.append(band)
     return bands
 

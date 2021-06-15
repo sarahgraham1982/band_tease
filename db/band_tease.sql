@@ -15,5 +15,6 @@ CREATE TABLE bands (
     favourite_song VARCHAR(255),
     favourite_album VARCHAR(255),
     fun_fact VARCHAR(255),
+    tee_image VARCHAR(255),
     user_id INT REFERENCES users(id)
 );
