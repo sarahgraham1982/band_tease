@@ -67,7 +67,7 @@ def update_band(id):
     favourite_album     = request.form['favourite_album']
     fun_fact            = request.form['fun_fact']
     user                = user_repository.select(user_id)
-    band                = Band(band_name, user, genre, favourite_song, favourite_album, fun_fact, id)
+    band                = Band(band_name, genre, favourite_song, favourite_album, fun_fact, user, id)
     band_repository.update(band)
     return redirect('/bands') 
 
