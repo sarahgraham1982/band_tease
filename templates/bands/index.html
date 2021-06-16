@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-
-{% for band in bands %}
-  <div class="band">
-    <div class="content">
-      {{band.user.first_name}}
-      <div class="band_name">
-        <a href="/bands/{{band.id}}">{{band.band_name}}</a>
-      </div>
+<!-- div class="band-container"> -->
+<div class="band-container">
+{% for band in bands %}  
+    <!-- <div class="band"> -->
+    <div class="band">
+      
+        <h1><a href="/bands/{{band.id}}">{{band.band_name}}</a></h1>
+        <h3>Worn by {{band.user.first_name}}</h3>
+    
 
       <div class="buttons">
 
@@ -19,9 +20,11 @@
       </div>
 
       <!-- show image of t shirt under band name in /bands -->
-        <img src="static/images/{{ band.tee_image }}" alt={{ band.band_name }} width="500" height="500"/>
+        <img src="static/images/{{ band.tee_image }}" alt={{ band.band_name }} width="300" height="300"/>
 
-      
+
+
+
     </div>
   </div>
 {% endfor %}
