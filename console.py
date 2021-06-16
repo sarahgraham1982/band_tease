@@ -18,22 +18,22 @@ user_repository.save(user2)
 
 user_repository.select_all()
 
-band1 = Band("Slayer", "Thrash Metal", "Black Magic", "Show No Mercy", "Last UK gig was in Glasgow in November 2018.", "slayer_tee.png", user1)
+band1 = Band("SLAYER", "Thrash Metal", "Black Magic", "Show No Mercy", "Last UK gig was in Glasgow in November 2018.", "slayer_tee.png", user1)
 band_repository.save(band1)
 
-band2 = Band("Nirvana", "Grunge", "Serve the Servants", "In Utero", "Lead singer died from a gunshot in 1994.", "nirvana_tee.png", user2)
+band2 = Band("NIRVANA", "Grunge", "Serve the Servants", "In Utero", "Lead singer died from a gunshot in 1994.", "nirvana_tee.png", user2)
 band_repository.save(band2)
 
-band3 = Band("Metallica", "Heavy Metal", "Fuel", "Reload", "Regarded as one of the 'Big Four' along with Slayer, Anthrax and Megadeath.", "metallica_tee.png", user2)
+band3 = Band("METALLICA", "Heavy Metal", "Fuel", "Reload", "Regarded as one of the 'Big Four' along with Slayer, Anthrax and Megadeath.", "metallica_tee.png", user2)
 band_repository.save(band3)
 
-band4 = Band("Iron Maiden", "Heavy Metal", "The Wicker Man", "Brave New World", "They have a skeleton mascot called Eddie who appears in all their album cover artwork.", "iron_maiden_tee.png", user2)
+band4 = Band("IRON MAIDEN", "Heavy Metal", "The Wicker Man", "Brave New World", "They have a skeleton mascot called Eddie who appears in all their album cover artwork.", "iron_maiden_tee.png", user2)
 band_repository.save(band4)
 
 band5 = Band("AC/DC", "Hard Rock", "Thunderstruck", "The Razor's Edge", "Founding members, brothers Brian and Angus were both born in Scotland.", "acdc_tee.png", user1)
 band_repository.save(band5)
 
-band6 = Band("T-Rex", "Glam Rock", "Debora", "Electric Warrior", "They headlined the first ever Glastonbury.", "t_rex_tee.png", user1)
+band6 = Band("T-REX", "Glam Rock", "Debora", "Electric Warrior", "They headlined the first ever Glastonbury.", "t_rex_tee.png", user1)
 band_repository.save(band6)
 
 
