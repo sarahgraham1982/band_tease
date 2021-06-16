@@ -16,7 +16,7 @@ bands_blueprint = Blueprint("bands", __name__)
 @bands_blueprint.route("/bands")
 def bands():
     bands = band_repository.select_all()
-    print([vars(item) for item in bands])
+    # print([vars(item) for item in bands])
     return render_template("bands/index.html", bands = bands)
 
 # NEW
