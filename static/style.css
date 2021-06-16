@@ -37,13 +37,14 @@ body {
 
 
 
-.band-container {
-  display: flex;
+.band {
+  display: grid;
+  grid-template-columns: 50% 50%;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.band-container a {
+.band a {
   color: #ee1212;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
