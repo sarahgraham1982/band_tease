@@ -2,13 +2,13 @@
 {% block content %}
 
   <div>
-    <p>{{band.band_name}}</p>
+    <p><h1>{{band.band_name}}</p></h1>
     <hr>
-    <p>{{band.user.first_name}}</p>
-    <p>{{band.genre}}</p>
-    <p>{{band.favourite_song}}</p>
-    <p>{{band.favourite_album}}</p>
-    <p>{{band.fun_fact}}</p>
+    <p>Worn by {{band.user.first_name}}</p>
+    <p>Genre: {{band.genre}}</p>
+    <p>Favourite Song: {{band.favourite_song}}</p>
+    <p>Favourite Album: {{band.favourite_album}}</p>
+    <p>Fun Fact: {{band.fun_fact}}</p>
     <!-- <p>{{band.tee_image}}</p> -->
     
     <p><a href="/bands/{{band.id}}/edit">Edit</a></p>

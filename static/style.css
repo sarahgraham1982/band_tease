@@ -7,10 +7,17 @@ body {
   height: auto;
 } 
 
+#nav-container {
+  margin: auto;
+  text-align: center;
+}
+
+
 .nav {
   position: relative;
   background-color: rgb(0, 0, 0);
   overflow: hidden;  
+
 }
 
 .nav a {
@@ -21,6 +28,8 @@ body {
   padding: 16px 26px;
   text-decoration: none;
   font-size: 20px;
+  
+  
 }
 
 .nav a:hover {
@@ -39,12 +48,17 @@ body {
 
 .band-container {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 20% 20% 20% 20%
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 20% 20% 20% 20%;
+  grid-gap: 120px 100px;
+  
 }
 
 .band {
   height: 700px;
+  margin: auto;
+  text-align: center;
+   
 }
 
 .band a {
