@@ -1,17 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
-
-  <div>
+<div class="edit-container">
+  <div class="band-edit">
     <p><h1>{{band.band_name}}</p></h1>
     <hr>
     <p>Worn by {{band.user.first_name}}</p>
-    <p>Genre: {{band.genre}}</p>
-    <p>Favourite Song: {{band.favourite_song}}</p>
-    <p>Favourite Album: {{band.favourite_album}}</p>
-    <p>Fun Fact: {{band.fun_fact}}</p>
+    <p><h2>Genre: {{band.genre}}</h2></p>
+    <p><h2>Favourite Song: {{band.favourite_song}}</h2></p>
+    <p><h2>Favourite Album: {{band.favourite_album}}</h2></p>
+    <p><h2>Fun Fact: {{band.fun_fact}}</h2></p>
     <!-- <p>{{band.tee_image}}</p> -->
     
-    <p><a href="/bands/{{band.id}}/edit">Edit</a></p>
+    <!-- <p><a href="/bands/{{band.id}}/edit">Edit</a></p> -->
   </div>
 
+  <div class="buttons">
+
+    <form class="edit-form" action="/bands/{{band.id}}/edit" method="GET">
+      <button class="trash-button">EDIT<i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+    </form>
+    <br>
+  
+    
+  </div>
+</div>
+
 {% endblock %}
+
+
+
