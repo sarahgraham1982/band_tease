@@ -15,6 +15,8 @@ user1 = User("Kendall", "Jenner")
 user_repository.save(user1)
 user2 = User("Justin", "Bieber")
 user_repository.save(user2)
+user3 = User("Miley", "Cyrus")
+user_repository.save(user3)
 
 user_repository.select_all()
 
@@ -35,6 +37,16 @@ band_repository.save(band5)
 
 band6 = Band("T-REX", "Glam Rock", "Debora", "Electric Warrior", "They headlined the first ever Glastonbury.", "t_rex_tee.png", user1)
 band_repository.save(band6)
+
+
+band7 = Band("BLACK FLAG", "Punk Rock", "Rise Above", "Damaged", "The guitarist Greg Ginn wrote most of their songs.", "black_flag_tee.png", user3)
+band_repository.save(band7)
+
+band8 = Band("GUNS N' ROSES", "Rock", "Nightrain", "Appetite for Destruction", "Lead singer Axl Rose hates performing live and often turns up late to their shows.", "gnr_tee.png", user3)
+band_repository.save(band8)
+
+band9 = Band("THE SMITHS", "Indie", "Still Ill", "The Queen is Dead", "Lead singer, Morrissey, although a good singer, has problematic views.", "smiths_tee.png", user3)
+band_repository.save(band9)
 
 
 band_repository.select_all()
