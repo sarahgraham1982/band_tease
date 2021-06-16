@@ -37,7 +37,7 @@ def create_band():
     favourite_song      = request.form['favourite_song']
     favourite_album     = request.form['favourite_album']
     fun_fact            = request.form['fun_fact']
-    tee_image           = "default.jpeg"
+    tee_image           = "default.png"
     user                = user_repository.select(user_id)
     band                = Band(band_name, genre, favourite_song, favourite_album, fun_fact, tee_image, user)
     band_repository.save(band)
@@ -68,7 +68,7 @@ def update_band(id):
     favourite_song      = request.form['favourite_song']
     favourite_album     = request.form['favourite_album']
     fun_fact            = request.form['fun_fact']
-    tee_image           = "default.jpeg"
+    tee_image           = "default.png"
     user                = user_repository.select(user_id)
     band                = Band(band_name, genre, favourite_song, favourite_album, fun_fact, tee_image, user, id)
     band_repository.update(band)
