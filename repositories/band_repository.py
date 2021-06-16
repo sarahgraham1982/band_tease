@@ -16,7 +16,7 @@ def save(band):
 def select_all ():
     bands = []
 
-    sql = "SELECT * FROM bands"
+    sql = "SELECT * FROM bands ORDER by band_name"
     results = run_sql(sql)
 
     for row in results:
@@ -53,6 +53,6 @@ def delete(id):
 
 
 def update(band):
-    sql = "UPDATE bands SET (band_name, genre, favourite_song, favourite_album, fun_fact, tee_image) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [band.band_name, band.genre, band.favourite_song, band.favourite_album, band.fun_fact, band.tee_image, band.id]
+    sql = "UPDATE bands SET (band_name, genre, favourite_song, favourite_album, fun_fact) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [band.band_name, band.genre, band.favourite_song, band.favourite_album, band.fun_fact, band.id]
     run_sql(sql, values)
