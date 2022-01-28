@@ -10,8 +10,6 @@ Install Flask (https://flask.palletsprojects.com/en/2.0.x/installation/).
 
 Install psycopg2 (https://pypi.org/project/psycopg2/).
 
-Navigate to wherever you stored the restaurant's reviews directory in your command line.
-
 createdb band_tease
 
 psql -d band_tease -f db/band_tease.sql
